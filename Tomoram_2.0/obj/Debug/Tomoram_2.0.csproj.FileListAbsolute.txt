@@ -1,0 +1,14 @@
+c:\users\виктория\documents\visual studio 2015\Projects\Tomoram_2.0\Tomoram_2.0\bin\Debug\Tomoram_2.0.exe.config
+c:\users\виктория\documents\visual studio 2015\Projects\Tomoram_2.0\Tomoram_2.0\obj\Debug\Tomoram_2.0.csprojResolveAssemblyReference.cache
+c:\users\виктория\documents\visual studio 2015\Projects\Tomoram_2.0\Tomoram_2.0\obj\Debug\Tomoram_2._0.Form1.resources
+c:\users\виктория\documents\visual studio 2015\Projects\Tomoram_2.0\Tomoram_2.0\obj\Debug\Tomoram_2._0.Properties.Resources.resources
+c:\users\виктория\documents\visual studio 2015\Projects\Tomoram_2.0\Tomoram_2.0\obj\Debug\Tomoram_2.0.csproj.GenerateResource.Cache
+c:\users\виктория\documents\visual studio 2015\Projects\Tomoram_2.0\Tomoram_2.0\bin\Debug\Tomoram_2.0.exe
+c:\users\виктория\documents\visual studio 2015\Projects\Tomoram_2.0\Tomoram_2.0\bin\Debug\Tomoram_2.0.pdb
+c:\users\виктория\documents\visual studio 2015\Projects\Tomoram_2.0\Tomoram_2.0\bin\Debug\OpenTK.dll
+c:\users\виктория\documents\visual studio 2015\Projects\Tomoram_2.0\Tomoram_2.0\bin\Debug\OpenTK.GLControl.dll
+c:\users\виктория\documents\visual studio 2015\Projects\Tomoram_2.0\Tomoram_2.0\bin\Debug\OpenTK.pdb
+c:\users\виктория\documents\visual studio 2015\Projects\Tomoram_2.0\Tomoram_2.0\bin\Debug\OpenTK.xml
+c:\users\виктория\documents\visual studio 2015\Projects\Tomoram_2.0\Tomoram_2.0\bin\Debug\OpenTK.GLControl.xml
+c:\users\виктория\documents\visual studio 2015\Projects\Tomoram_2.0\Tomoram_2.0\obj\Debug\Tomoram_2.0.exe
+c:\users\виктория\documents\visual studio 2015\Projects\Tomoram_2.0\Tomoram_2.0\obj\Debug\Tomoram_2.0.pdb

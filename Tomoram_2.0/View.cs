@@ -1,14 +1,14 @@
 ﻿using System; //
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
 //using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using System.Drawing; //
 using System.Drawing.Imaging; //
-using OpenTK.Graphics; // 
-using OpenTK.Graphics;
+using OpenTK.Graphics; 
+//using OpenTK.Graphics;
 
 
 namespace Tomoram_2._0
@@ -74,8 +74,9 @@ namespace Tomoram_2._0
         {
             GL.BindTexture(TextureTarget.Texture2D, VBOtexture);
             BitmapData data = textureImage.LockBits(new System.Drawing.Rectangle(0, 0, textureImage.Width, textureImage.Height), ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-
-            GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, data.Width, data.Height, 0, OpenTK.Graphics.PixelFormat.Rgba, PixelType.UnsignedByte, data.Scan0);
+              GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, data.Width, data.Height, 0, OpenTK.Graphics.OpenGL.PixelFormat.Rgba, PixelType.UnsignedByte, data.Scan0);
+            //GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, data.Width, data.Height, 0, OpenTK.Graphics.PixelFormat.Rgba, PixelType.UnsignedByte, data.Scan0);
+           
 
             textureImage.UnlockBits(data);
 

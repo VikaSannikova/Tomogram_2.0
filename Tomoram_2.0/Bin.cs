@@ -9,7 +9,7 @@ using System.IO;
 
 namespace Tomoram_2._0
 {
-    class Bin
+    class Bin  //чтение томограммы, интовые чиста и массив типа short
     {
         public static int X, Y, Z;
         public static short[] array;

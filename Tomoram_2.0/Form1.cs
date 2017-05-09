@@ -16,11 +16,12 @@ namespace Tomoram_2._0
         Bin bin = new Bin();
         View view = new View();
         bool loaded = false;
+        bool needReload = false;
         int currentLayer = 0;
         int FrameCount;
         DateTime NextFPSUpdate; //= DateTime.Now.AddSeconds(1);
 
-        void displayFPS()
+        void displayFPS() //функция обновления fps
         {
             if (DateTime.Now >= NextFPSUpdate)
             {
@@ -34,6 +35,7 @@ namespace Tomoram_2._0
         public Form1()
         {
             InitializeComponent();
+            label1.Text = "Текущий уровень = ";
         }
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,14 +52,27 @@ namespace Tomoram_2._0
                 glControl1.Invalidate();
             }
             //label_max.Text = "" + (Bin.Z - 1);
-            //label_LayerCurrent.Text = "Текущий уровень = " + currentLayer;
+            label1.Text = "Текущий уровень = " + currentLayer;
         }
 
         private void glControl1_Paint(object sender, PaintEventArgs e)
         {
             if (loaded)
             {
-                view.DrawQuads(currentLayer);
+                if (quadsButton1.Checked)
+                {
+                    view.DrawQuads(currentLayer);
+                }
+                if (textureButton2.Checked)
+                {
+                    if (needReload)
+                    {
+                        view.generateTextureImage(currentLayer);
+                        view.Load2DTexture();
+                        needReload = false;
+                    }
+                    view.DrawTexture();
+                }
                 glControl1.SwapBuffers();
             }
         }
@@ -66,23 +81,54 @@ namespace Tomoram_2._0
         {
 
             currentLayer = trackBar1.Value;
-            Refresh();
-            //label_LayerCurrent.Text = "Текущий уровень = " + currentLayer;
-           // needReload = true;
+            label1.Text = "Текущий уровень = " + currentLayer;
+            needReload = true;
+            //Refresh();
         }
 
-        void Application_Idle(object sender, EventArgs e)
+        void Application_Idle(object sender, EventArgs e) //проявляет на занятость окно формы
         {
             while (glControl1.IsIdle)
             {
                 displayFPS();
-                glControl1.Invalidate();
+                glControl1.Invalidate(); //заставлет снова рендериться
             }
         }
 
-        private void Form1_Load_1(object sender, EventArgs e)
+        private void Form1_Load_1(object sender, EventArgs e) //конструктор формы
         {
             Application.Idle += Application_Idle;
         }
+
+        private void trackBar_min_Scroll(object sender, EventArgs e)
+        {
+            view.SetMinMaxTransferFunction(trackBar_min.Value, trackBar_min.Value + trackBar_width.Value);
+            label_min.Text = "Текущий минимум = " + trackBar_min.Value;
+            label_max.Text = "Текущий максимум = " + (trackBar_min.Value + trackBar_width.Value);
+            needReload = true;
+            //Refresh();
+        }
+
+        private void trackBar_width_Scroll(object sender, EventArgs e)
+        {
+            view.SetMinMaxTransferFunction(trackBar_min.Value, trackBar_min.Value + trackBar_width.Value);
+            label_width.Text = "Текущая ширина = " + trackBar_width.Value;
+            label_max.Text = "Текущий максимум = " + (trackBar_min.Value + trackBar_width.Value);
+            needReload = true;
+            //Refresh();
+        }
+
+        //private void label1_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void trackBar2_Scroll(object sender, EventArgs e)
+        //{
+        //    view.SetMinMaxTransferFunction(trackBar_min.Value, trackBar_min.Value + trackBar_width.Value);
+        //    label_min.Text = "Текущий минимум = " + trackBar_min.Value;
+        //    label_TFMaxCurrent.Text = "Текущий максимум = " + (trackBar_TFMin.Value + trackBar_TFHeight.Value);
+        //    needReload = true;
+        //}
     }
 }
